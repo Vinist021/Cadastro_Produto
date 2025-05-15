@@ -20,9 +20,15 @@ loadCategories();
 
 //load all categories
 function loadCategories() {
-    $.getJSON('http://localhost:8080/categories', (response) => {
-        categories = response;
+    $.ajax({
+        url: 'http://localhost:8080/categories',
+        type: 'GET',
+        async: false,
+        success: (response) => {
+            categories = response;
+        }
     });
+    
 }
 
 //Load all prodcuts
