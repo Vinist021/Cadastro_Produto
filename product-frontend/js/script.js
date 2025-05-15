@@ -5,15 +5,9 @@ function convertToNumber(priceFormat) {
     return priceFormat.replace(/\./g, '').replace(',', '.');
 }
 
-var products = [
-   
-];
+var products = [];
 
-var categories = [
-    { id: 1, name: 'Produção Própria' },
-    { id: 2, name: 'Nacional' },
-    { id: 3, name: 'Importado' }
-];
+var categories = [];
 
 var formatter = new Intl.NumberFormat('pt-BR', {
     style: 'currency',
@@ -22,11 +16,20 @@ var formatter = new Intl.NumberFormat('pt-BR', {
 
 //OnLoad
 loadProducts();
+loadCategories();
+
+//load all categories
+function loadCategories() {
+    $.getJSON('http://localhost:8080/categories', (response) => {
+        categories = response;
+    });
+}
 
 //Load all prodcuts
 function loadProducts(){
     $.getJSON('http://localhost:8080/products', (response) => {
-        for(let prod of response) {
+        let products = response;
+        for(let prod of products) {
         addNewRow(prod);
         }
     });
