@@ -34,10 +34,10 @@ public class Product {
     public void setPrice(double price) {
         this.price = price;
     }
-    public int getCategory() {
+    public int getidCategory() {
         return idCategory;
     }
-    public void setCategory(int idCategory) {
+    public void setidCategory(int idCategory) {
         this.idCategory = idCategory;
     }
     public boolean isPromotion() {
@@ -46,10 +46,10 @@ public class Product {
     public void setPromotion(boolean promotion) {
         this.promotion = promotion;
     }
-    public boolean isRelease() {
+    public boolean isNewProduct() {
         return newProduct;
     }
-    public void setRelease(boolean newProduct) {
+    public void setnewProduct(boolean newProduct) {
         this.newProduct = newProduct;
     }
     
