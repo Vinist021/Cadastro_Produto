@@ -10,31 +10,29 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.abutua.product_backend.models.Product;
+import com.abutua.product_backend.models.Category;
 
 @RestController
-public class ProductController {
-
-    private List<Product> products = Arrays.asList( new Product(1, "Product 01", 100.50),
-                                                    new Product(2, "Product 02", 200.50),
-                                                    new Product(3, "Product 03", 300.50)
+public class CategoryController {
+    
+    private List<Category> categories = Arrays.asList(  new Category(1, "Produção Própria"),
+                                                        new Category(2, "Nacional"),
+                                                        new Category(3, "Importado")
     );
 
-    @GetMapping("products/{id}")
-    public ResponseEntity<Product> getProduct(@PathVariable int id) {
-       
+    @GetMapping("categories")
+    public List<Category> getCategories() {
+        return categories;
+    }
 
-        Product prod = products.stream()
+    @GetMapping("categories/{id}")
+    public ResponseEntity<Category> getCategoria(@PathVariable int id) {
+    
+        Category cat = categories.stream()
                                 .filter(p -> p.getId() == id)
                                 .findFirst()
                                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found"));
 
-        return ResponseEntity.ok(prod);
+        return ResponseEntity.ok(cat);
     }
-
-    @GetMapping("products")
-    public List<Product> getProducts() {
-        return products;
-    }
-
 }

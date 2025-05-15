@@ -1,22 +1,19 @@
 package com.abutua.product_backend.models;
 
-public class Product {
-
+public class Category {
     private int id;
     private String name;
-    private double price;
 
-    //Métodos Construtores
-    public Product(int id, String name, double price) {
+    // Métodos Construtores
+    public Category(int id, String name) {
         this.id = id;
         this.name = name;
-        this.price = price;
     }
 
-    public Product() {
+    public Category() {
         
     }
-    
+
     public int getId() {
         return id;
     }
@@ -29,12 +26,5 @@ public class Product {
     public void setName(String name) {
         this.name = name;
     }
-    public double getPrice() {
-        return price;
-    }
-    public void setPrice(double price) {
-        this.price = price;
-    }
 
-    
 }
