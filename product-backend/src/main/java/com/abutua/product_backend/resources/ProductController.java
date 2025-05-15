@@ -15,9 +15,13 @@ import com.abutua.product_backend.models.Product;
 @RestController
 public class ProductController {
 
-    private List<Product> products = Arrays.asList( new Product(1, "Product 01", 100.50),
-                                                    new Product(2, "Product 02", 200.50),
-                                                    new Product(3, "Product 03", 300.50)
+    private List<Product> products = Arrays.asList( new Product(
+        1, "Computador M1-TX", "Intel I7, 16GB, SSD 256, HT 1TB",
+        4900.00, 2, true, true),
+        new Product(2, "Computador M2-TX", "Intel I7, 32GB, SSD 512, HT 1TB",
+        5900.00, 3, false, true),
+        new Product(3, "Computador M1-T", "Intel I5, 8GB, HT 1TB",
+        2900.00, 1, false, false)                   
     );
 
     @GetMapping("products/{id}")
