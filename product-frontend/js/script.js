@@ -18,6 +18,12 @@ var formatter = new Intl.NumberFormat('pt-BR', {
 loadProducts();
 loadCategories();
 
+//Categories options
+function addCategorires(categories) {
+    for(let cat of categories)
+        document.getElementById('selectCategory').innerHTML +=  `<option value="${cat.id}">${cat.name}</option>`;
+}
+
 //load all categories
 function loadCategories() {
     $.ajax({
@@ -26,9 +32,9 @@ function loadCategories() {
         async: false,
         success: (response) => {
             categories = response;
+            addCategorires(categories);
         }
     });
-    
 }
 
 //Load all prodcuts
@@ -49,15 +55,22 @@ function save() {
         name: document.getElementById('inputName').value,
         description: document.getElementById('inputDescription').value,
         price: convertToNumber(document.getElementById('inputPrice').value),
-        category: document.getElementById('selectCategory').value,
+        idCategory: document.getElementById('selectCategory').value,
         promotion: document.getElementById('checkBoxPromotion').checked,
-        new: document.getElementById('checkBoxNewProduct').checked
+        newProduct: document.getElementById('checkBoxNewProduct').checked
     };
 
-    addNewRow(prod);
-    products.push(prod);
-
-    document.getElementById('formProduct').reset();
+     $.ajax({
+        url: 'http://localhost:8080/products',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(prod),
+        success: (product) => {
+            addNewRow(product);
+            products.push(product);
+            document.getElementById('formProduct').reset();
+        }
+    });
 }
 
 //Add new row
@@ -101,7 +114,4 @@ function addNewRow(prod) {
     cell = newRow.insertCell();
     cell.className = 'd-none d-md-table-cell';
     cell.innerHTML = options;
-    
 }
-
-
