@@ -28,9 +28,9 @@ Este é um projeto **Fullstack** desenvolvido para gerenciar o cadastro de produ
 ## 🚀 Como Executar o Projeto
 
 ### 🔧 Pré-requisitos
-  - Java 17 ou superior
+  - [Java 17 ou superior](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
   
-  - Maven  
+  - [Maven](https://maven.apache.org/download.cgi)
 
 ### ⚙️ Backend
 
