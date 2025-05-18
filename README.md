@@ -10,7 +10,7 @@ Este é um projeto **Fullstack** desenvolvido para gerenciar o cadastro de produ
 
 - Cadastro de novos produtos com informações detalhadas.
 - Listagem de produtos cadastrados.
-- Edição de informações dos produtos.
+- Seleção de opções para produtos
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -54,6 +54,6 @@ Este é um projeto **Fullstack** desenvolvido para gerenciar o cadastro de produ
 
 ## 📎 Acesso para o Frontend do projeto
 ### Repositório
-🚀 Acesse o repositório: [Repositório: Frontend Cadastro de Produtos](https://github.com/Vinist021/Frontend_Cadastro_de_Produtos)
+📚 Acesse o repositório: [Repositório: Frontend Cadastro de Produtos](https://github.com/Vinist021/Frontend_Cadastro_de_Produtos)
 ### Página Web
 🚀 Acesse Frontend do projeto: [Página web: Cadastro de Produtos](https://vinist021.github.io/Frontend_Cadastro_de_Produtos/) 
